@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 1 Solution</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Question 1</a>
+      <a href="/list">Question 2</a>
+      <a href="/input">Question 3</a>
+    </nav>
+    <h1>Question 1 Solution:</h1>
+
+    <% if (count) { %>
+    <div>
+      <p>
+        Kindly find below, the result for polling_unit_uniqueid: <%=
+        pollingUnitUniqueID %>
+      </p>
+
+      <div>
+        <% results.forEach(result => { %>
+        <div style="margin-top: 8px">
+          <span>Party: <%= result.party_abbreviation %>,</span>
+          <span>Score: <%= result.party_score %></span>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+    <% } else { %>
+
+    <p>
+      No result found for the given polling_unit_uniqueid: <%=
+      pollingUnitUniqueID %>
+    </p>
+
+    <% } %>
+  </body>
+</html>
